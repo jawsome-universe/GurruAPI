@@ -10,21 +10,14 @@ import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BaseGurruTest {
-    protected LoginPage loginPage;
+    public LoginPage loginPage;
 
     @BeforeClass
     public static void setUp() {
         WebDriverManager.chromedriver().setup();
         browser = "chrome";
         baseUrl = "https://premier-dev.azurewebsites.net/";
-    }
 
-    @BeforeClass
-    public static void loginAsAdmin() {
-        loginPage.open()
-                .typeUserName("wtAdmin")
-                .typePassword("Aa123456!")
-                .clickLoginButton();
     }
 
 }

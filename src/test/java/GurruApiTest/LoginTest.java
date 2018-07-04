@@ -12,15 +12,15 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class LoginTest extends BaseGurruTest{
 
-    private LoginPage loginPage;
+    public LoginPage loginPage;
 
     @Test
     public void login() {
         loginPage = new LoginPage();
-       // loginPage.open()
-             //  .typeUserName("wtAdmin")
-             //  .typePassword("Aa123456!")
-             //  .clickLoginButton();
+        loginPage.open()
+             .typeUserName("wtAdmin")
+             .typePassword("Aa123456!")
+             .clickLoginButton();
         $(By.id("dLabel")).shouldHave(text("Administrator Administrator")); //change fucking xpath
 
     }
