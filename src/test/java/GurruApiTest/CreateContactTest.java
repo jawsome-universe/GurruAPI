@@ -1,6 +1,7 @@
 package GurruApiTest;
 import BaseGurru.BaseGurruTest;
 
+import static org.apache.commons.lang3.RandomUtils.nextInt;
 import GurruContactsPage.ContactCreate;
 import GurruLoginPage.LoginPage;
 import org.junit.Test;
@@ -17,14 +18,20 @@ public class CreateContactTest extends BaseGurruTest{
     @Test
     public void createContact() {
         contactCreate = new ContactCreate();
-        contactCreate
-                .clickOnCustomerSidebarTab();
-
+        contactCreate.clickOnCustomerSidebarTab();
+        contactCreate.clickOnContactsTab();
+        contactCreate.clickOnContactCreateButton();
+        contactCreate.typeFirstName("TestUser"+nextInt())
+                .typeLastName("LastName"+nextInt())
+                .clickOnCreateButton();
         sleep(3000);
+        //Check confirm success message
+        $(By.xpath("//div[contains(@class, 'growl-message ng-binding')]")).shouldHave(text("Successfully created Contact"));
+
         //.typeUserName("wtAdmin")
         //.typePassword("Aa123456!")
         //.clickLoginButton();
-        // $(By.id("dLabel")).shouldHave(text("Administrator Administrator")); //change fucking xpath
+        // $(By.id("dLabel")).shouldHave(text("Successfully created Contact")); //change fucking xpath
 
     }
 

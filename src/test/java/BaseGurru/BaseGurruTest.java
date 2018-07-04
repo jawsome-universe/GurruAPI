@@ -2,6 +2,7 @@ package BaseGurru;
 
 import GurruLoginPage.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Before;
 import org.junit.BeforeClass;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -17,4 +18,13 @@ public class BaseGurruTest {
         browser = "chrome";
         baseUrl = "https://premier-dev.azurewebsites.net/";
     }
+
+    @BeforeClass
+    public static void loginAsAdmin() {
+        loginPage.open()
+                .typeUserName("wtAdmin")
+                .typePassword("Aa123456!")
+                .clickLoginButton();
+    }
+
 }

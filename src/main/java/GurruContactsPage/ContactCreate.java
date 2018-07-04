@@ -15,13 +15,13 @@ public class ContactCreate {
     private By firstNameField = xpath("/html/body/div[1]/div/div[2]/div/div/div[2]/div/div/div[2]/form/div[1]/div/div/fieldset/div[2]/input");
     private By lastNameField = xpath("/html/body/div[1]/div/div[2]/div/div/div[2]/div/div/div[2]/form/div[1]/div/div/fieldset/div[3]/input");
     private By createButton = xpath("/html/body/div[1]/div/div[2]/div/div/div[2]/div/div/div[2]/form/div[3]/div/div/button[3]");
+    private By confirmPopUp = xpath("//div[contains(@class, 'growl-message ng-binding')]");
 
-    /*
+
     public ContactCreate open(){
         Selenide.open("#/contacts");
         return this;
     }
-    */
 
     public void clickOnCustomerSidebarTab(){
         $(customersSideBarDropdown).click();
@@ -45,7 +45,11 @@ public class ContactCreate {
         return this;
     }
 
-    public void clickonCreateButton(){
+    public void clickOnCreateButton(){
         $(createButton).click();
+    }
+
+    public void checkConfirmPopUp(){
+        $(confirmPopUp).getText();
     }
 }

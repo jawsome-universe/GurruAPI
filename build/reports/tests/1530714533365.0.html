@@ -1,0 +1,194 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="k-webkit k-webkit67 js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="" href="/images/favicon.png" />
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <title>Gurru</title>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~/Scripts/Shivm.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link href="/bundles/cssCore?v=6FRKy0pgiFLVna09MYDJMiUjF44IOhUCPf2hf3j0MSs1" rel="stylesheet" />
+
+    <link href="/bundles/kendocss?v=SjjS7osvLP8z8zK3okJ6klCDEKdzfprb24ZQQxT6_381" rel="stylesheet" />
+
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+</head>
+
+<body history="" ng-app="gurruApp" class="ng-scope">
+    <window-size></window-size>
+    <div class="page-wrap ng-scope" ng-controller="authController">
+        <header class="header wt-hide" wtshow="$state.current.authenticate">
+            <div class="logo">
+                <a ng-click="goToDashboard()" style="cursor: pointer">
+                    <img src="/images/dashboard-logo.png" alt="Gurru logo" />
+                </a><div class="toggle_side visible-sm visible-xs"><i class="fa fa-bars"></i></div>
+            </div>
+            <div class="top_bar">
+                <div class="dropdown top_bar_drop">
+                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="login-user hidden-xs ng-binding">  </span>
+                        <!-- User Profile ends here-->
+                        <span class="fa fa-angle-down"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li ng-click="logout()"><a id="logoutLnk"><i class="ion ion-log-out"></i>Logout</a></li>
+                    </ul>
+                </div>
+                <!-- Top Bar dropdown ends-->
+                <div class="tp_notification">
+
+                </div>
+                <!-- Notification Bar ends-->
+            </div>
+            <!-- Top bar ends here-->
+        </header>
+
+        <div class="w100p">
+            <div class="w20p psF lftbar zindex2 wt-hide" wtshow="$state.current.authenticate">
+                <div class="user_profile hidden-xs">
+                    <div class="user_img">
+                        <div class="user_status online"></div>
+                        
+                    </div>
+                    <div class="user-name ng-binding">
+                        Hello  
+                    </div>
+                    <div class="user-desig">welcome back</div>
+                </div>
+                <!-- User Profile ends here-->
+                <div class="dashboard_nav" ng-style="{'height':windowNavigationHeight}" style="overflow: auto; height: 783px;">
+                    <ul>
+                        <!-- ngIf: !layoutUserData.landingPage && authorizedGroup([enumPermissionEntity.driverDashboard,
+                            enumPermissionEntity.salesDashboard, enumPermissionEntity.serviceDashboard, enumPermissionEntity.supplierDashboard ]) -->
+                        <!-- ngIf: layoutUserData.landingPage &&  authorized(enumPermissionEntity.salesDashboard, enumPermissionAccessQualifier.view) -->
+                        <!-- ngIf: layoutUserData.landingPage &&  authorized(enumPermissionEntity.serviceDashboard, enumPermissionAccessQualifier.view) -->
+                        <!-- ngIf: layoutUserData.landingPage && authorized(enumPermissionEntity.driverDashboard, enumPermissionAccessQualifier.view) -->
+                        <!-- ngIf: layoutUserData.landingPage && authorized(enumPermissionEntity.supplierDashboard, enumPermissionAccessQualifier.view) -->
+
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.customers , enumPermissionEntity.contacts, enumPermissionEntity.services, enumPermissionEntity.subcontractors, enumPermissionEntity.bookings, enumPermissionEntity.subcontractorReconciliations ]) -->
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.leads, enumPermissionEntity.opportunities, enumPermissionEntity.quotes, enumPermissionEntity.contract]) -->
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.tickets, enumPermissionEntity.dvrs, enumPermissionEntity.incidents]) -->
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.priceSettings,enumPermissionEntity.wasteTypes,enumPermissionEntity.productTypes,enumPermissionEntity.serviceTypes,enumPermissionEntity.frequencyTypes,enumPermissionEntity.salesActivities,enumPermissionEntity.commissionSettings,enumPermissionEntity.businessTypes,enumPermissionEntity.salesTypes, enumPermissionEntity.contractStandardTerms, enumPermissionEntity.productPriceSettings, enumPermissionEntity.serviceCodes]) -->
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.incidentTypes, enumPermissionEntity.ticketCategories, enumPermissionEntity.vehicles, enumPermissionEntity.components, enumPermissionEntity.equipments, enumPermissionEntity.resolutionReasons]) -->
+                        
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.users, enumPermissionEntity.roles, enumPermissionEntity.teams]) -->
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.entityNumber, enumPermissionEntity.systemConfigurations]) -->
+                        <!-- ngIf: authorizedGroup([enumPermissionEntity.administratorActions]) -->
+                        <!-- ngIf: authorized(enumPermissionEntity.runJob, enumPermissionAccessQualifier.resignWebJob) ||
+                            authorized(enumPermissionEntity.runJob, enumPermissionAccessQualifier.resignEmailWebJob) ||
+                            authorized(enumPermissionEntity.runJob, enumPermissionAccessQualifier.followUpWebJob) ||
+                            authorized(enumPermissionEntity.runJob, enumPermissionAccessQualifier.bookingWebJob) -->
+                        <!-- ngIf: authorized(enumPermissionEntity.customers, enumPermissionAccessQualifier.importData) ||
+                            authorized(enumPermissionEntity.services, enumPermissionAccessQualifier.importData) ||
+                            authorized(enumPermissionEntity.servicesWeight, enumPermissionAccessQualifier.importData) -->
+                    </ul>
+                </div>
+                <!-- Navigation ends here-->
+            </div>
+            <!-- Left Content-->
+
+            <div data-ng-class="{'right_cntnt_M':$state.current.authenticate}">
+                
+
+<div class="container-fluid ng-scope" ng-controller="mainFrameCntrl" ng-class="isLoading ? 'content_loading' :''" style="">
+    <div class="row">
+        
+        <div class="top_title_bar" style="display: block;">
+            <div class="breadcrumbsection breadcrumbsection_new">
+                <div ncy-breadcrumb="" class="ng-isolate-scope">  <!-- ngRepeat: item in steps --><!-- ngIf: $last --><div class="page_title ng-scope" ng-repeat="item in steps" ng-if="$last" style=""><span class="ion  "></span> <span class="ng-binding">login</span></div><!-- end ngIf: $last --><!-- end ngRepeat: item in steps --><div class="search_bar"><input type="search" placeholder="Search" /> <button type="submit" value="" class="btn_search"></button></div><ul class="breadcrumb breadcrumb_new"><!-- ngRepeat: step in steps --><li ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract" class="ng-scope active" style=""><!-- ngSwitchWhen: false --><!-- ngSwitchWhen: true --><span ng-switch-when="true" class="ng-binding ng-scope">login</span><!-- end ngSwitchWhen: --></li><!-- end ngRepeat: step in steps --></ul></div>
+            </div>
+        </div>
+
+        <!-- uiView:  --><div ui-view="" class="ng-scope" style=""><div class="container-fluid ng-scope">
+    <div class="row login_bg">
+        <div class="col-xs-12" style="height:100%">
+            <div id="login_form">
+                <div class="col-xs-12 text-center login_scr"><img src="images/login_logo.png" class="img-responsive" /></div>
+                <div class="col-xs-12">
+                    <form class="form-horizontal ng-valid ng-dirty ng-valid-parse ng-modified" style="">
+
+                        <div style="margin-bottom: 20px" class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input id="login-username" type="text" class="form-control ng-valid ng-dirty ng-valid-parse ng-modified ng-touched" ng-model="loginData.username" value="admin@gmail.com" placeholder="Username" style="" />
+                        </div>
+
+                        <div style="margin-bottom: 20px" class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input id="login-password" type="password" class="form-control ng-untouched ng-valid ng-dirty ng-valid-parse ng-modified" ng-model="loginData.password" placeholder="Password" value="Aa123456!" style="" />
+                        </div>
+
+
+                        <button id="loginBtn" class="btn btn-block" ng-click="login()">
+                            Login
+
+                        </button>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="control-inline">
+
+                                    <input class="styled-checkbox" id="login-remember" type="checkbox" name="remember" value="1" checked="" />
+                                    <label for="login-remember">Remember me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-xs-6">
+                            <div class="row text-right">
+                                <a href="#" class="forgot_pwd">Forgot Password?</a>
+                            </div>
+                        </div>-->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+    </div>
+</div>
+
+
+            </div>
+            <!-- Right Content-->
+        </div>
+    </div>
+    <footer class="footer wt-hide" wtshow="$state.current.authenticate">
+        <div class="copyright_text"><i class="fa fa-copyright"></i> Copyright 2018 | Gurru</div>
+    </footer>
+    <div>
+        <div growl="" class="ng-isolate-scope"><div class="growl-container growl-fixed bottom-right" ng-class="wrapperClasses()"><!-- ngRepeat: message in growlMessages.directives[referenceId].messages --></div></div>
+
+        <div class="loading_div ng-hide" ng-show="isLoading" style=""><div class="loader"></div></div>
+    </div>
+    <script src="/bundles/vendor?v=-5QIy_Ho-c7kfCFnPdUW2IXHLt8InN4cVJs3zUSMM4A1"></script><script type="text/vbscript">
+Function IEBinary_getByteAt(strBinary, iOffset)
+ IEBinary_getByteAt = AscB(MidB(strBinary,iOffset+1,1))
+End Function
+Function IEBinary_getLength(strBinary)
+ IEBinary_getLength = LenB(strBinary)
+End Function
+</script>
+
+
+    <script src="/bundles/gurruApp?v=J3MGUtLTvn0tr2wb8RGtwGny0KTYZl8PmHsNYLPzJQQ1"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.js"></script>
+
+
+
+</body></html>

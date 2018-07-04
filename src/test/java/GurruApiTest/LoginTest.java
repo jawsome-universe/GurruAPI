@@ -15,12 +15,12 @@ public class LoginTest extends BaseGurruTest{
     private LoginPage loginPage;
 
     @Test
-    public void typeInvalidYear() {
+    public void login() {
         loginPage = new LoginPage();
-        loginPage.open()
-                .typeUserName("wtAdmin")
-                .typePassword("Aa123456!")
-                .clickLoginButton();
+       // loginPage.open()
+             //  .typeUserName("wtAdmin")
+             //  .typePassword("Aa123456!")
+             //  .clickLoginButton();
         $(By.id("dLabel")).shouldHave(text("Administrator Administrator")); //change fucking xpath
 
     }
