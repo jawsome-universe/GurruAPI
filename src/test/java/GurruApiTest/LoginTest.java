@@ -1,18 +1,30 @@
 package GurruApiTest;
 
-import BaseGurru.BaseGurruTest;
 import GurruLoginPage.LoginPage;
 import org.junit.Test;
 import org.junit.Assert.*;
+import GurruLoginPage.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.BeforeClass;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Configuration.browser;
+import static com.codeborne.selenide.Selenide.$;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
-public class LoginTest extends BaseGurruTest{
+public class LoginTest {
 
-    public LoginPage loginPage;
+    static LoginPage loginPage;
+
+    @BeforeClass
+    public static void setUp() {
+        WebDriverManager.chromedriver().setup();
+        browser = "chrome";
+        baseUrl = "https://premier-dev.azurewebsites.net/";
+    }
 
     @Test
     public void login() {

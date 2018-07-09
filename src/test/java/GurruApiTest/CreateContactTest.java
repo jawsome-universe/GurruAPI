@@ -10,10 +10,35 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
+import GurruLoginPage.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
-public class CreateContactTest extends BaseGurruTest{
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Configuration.browser;
+import static com.codeborne.selenide.Selenide.$;
+import org.openqa.selenium.By;
 
-    private ContactCreate contactCreate;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.$;
+
+public class CreateContactTest {
+
+    static LoginPage loginPage;
+    public ContactCreate contactCreate;
+
+    @BeforeClass
+    public static void setUp() {
+        WebDriverManager.chromedriver().setup();
+        browser = "chrome";
+        baseUrl = "https://premier-dev.azurewebsites.net/";
+        loginPage = new LoginPage();
+        loginPage.open()
+                .typeUserName("wtAdmin")
+                .typePassword("Aa123456!")
+                .clickLoginButton();
+    }
 
     @Test
     public void createContact() {
