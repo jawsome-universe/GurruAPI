@@ -19,7 +19,7 @@ public class ContactCreate {
 
 
     public ContactCreate open(){
-        Selenide.open("#/contacts");
+        Selenide.open("#/");
         return this;
     }
 
